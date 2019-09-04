@@ -158,4 +158,5 @@ Feedstock Maintainers
 =====================
 
 * [@apcamargo](https://github.com/apcamargo/)
+* [@dbast](https://github.com/dbast/)
 

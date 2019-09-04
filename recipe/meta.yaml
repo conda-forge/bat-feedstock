@@ -1,4 +1,4 @@
-{% set version = "0.11.0" %}
+{% set version = "0.12.1" %}
 {% set native = 'm2w64-' if win else '' %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sharkdp/bat/archive/v{{ version }}.tar.gz
-  sha256: bb4e39efadfab71c0c929a92b82dac58deacfe2a4eb527d4256ac0634e042ed2
+  sha256: 1dd184ddc9e5228ba94d19afc0b8b440bfc1819fef8133fe331e2c0ec9e3f8e2
 
 build:
   number: 0
@@ -15,8 +15,12 @@ build:
 requirements:
   build:
     - rust
-    - binutils              # [linux]
-    - {{native}}binutils    # [win]
+    - {{ compiler('c') }}              # [unix]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{native}}binutils
+  host:
+    - clangdev              # [not osx]
+    - llvmdev               # [not osx]
 
 test:
   commands:
@@ -31,3 +35,4 @@ about:
 extra:
   recipe-maintainers:
     - apcamargo
+    - dbast
