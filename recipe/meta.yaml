@@ -16,9 +16,11 @@ build:
 requirements:
   build:
     - rust
-    - clangdev             # [not osx]
     - {{ compiler('c') }}
     - {{native}}binutils
+  host:
+    - clangdev              # [not osx]
+    - llvmdev               # [not osx]
 
 test:
   commands:
