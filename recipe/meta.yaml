@@ -16,7 +16,8 @@ build:
 requirements:
   build:
     - rust
-    - {{ compiler('c') }}
+    - {{ compiler('c') }}              # [unix]
+    - {{ compiler('m2w64_c') }}        # [win]
     - {{native}}binutils
   host:
     - clangdev              # [not osx]
