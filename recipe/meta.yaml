@@ -10,14 +10,13 @@ source:
   sha256: 1dd184ddc9e5228ba94d19afc0b8b440bfc1819fef8133fe331e2c0ec9e3f8e2
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - rust
     - {{ compiler('c') }}              # [unix]
     - {{ compiler('m2w64_c') }}        # [win]
-    - {{native}}binutils
   host:
     - clangdev              # [not osx]
     - llvmdev               # [not osx]
@@ -29,6 +28,7 @@ test:
 about:
   home: https://github.com/sharkdp/bat
   license: MIT
+  license_family: MIT
   summary: A cat(1) clone with syntax highlighting and Git integration
   license_file: LICENSE-MIT
 
