@@ -1,4 +1,4 @@
-{% set version = "0.15.2" %}
+{% set version = "0.15.3" %}
 {% set native = 'm2w64-' if win else '' %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sharkdp/bat/archive/v{{ version }}.tar.gz
-  sha256: 7922e03c3b9da2abe76b294ac5cda4529bce8a1974ecf1c9228f334c82c132bc
+  sha256: 5880d3c25a964991ae573f3059b432c13f7e97530e2e28aa25ec2d4a06f6b926
 
 build:
   number: 0
