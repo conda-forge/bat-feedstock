@@ -5,11 +5,9 @@ Home: https://github.com/sharkdp/bat
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bat-feedstock/blob/master/LICENSE.txt)
 
 Summary: A cat(1) clone with syntax highlighting and Git integration
-
-
 
 Current build status
 ====================
