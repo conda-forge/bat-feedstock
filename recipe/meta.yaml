@@ -10,11 +10,11 @@ source:
   sha256: 4db85abfaba94a5ff601d51b4da8759058c679a25b5ec6b45c4b2d85034a5ad3
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - rust
+    - {{ compiler('rust') }}
     - {{ compiler('c') }}              # [unix]
     - {{ compiler('m2w64_c') }}        # [win]
   host:
