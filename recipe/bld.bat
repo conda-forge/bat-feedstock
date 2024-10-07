@@ -1,14 +1,11 @@
-:: build
-cargo install --locked --root "%PREFIX%" --path . || goto :error
+@echo on
 
-:: strip debug symbols
-strip "%PREFIX%\bin\bat.exe" || goto :error
+set CARGO_PROFILE_RELEASE_STRIP=symbols
+set CARGO_PROFILE_RELEASE_LTO=fat
 
-:: remove extra build file
-del /F /Q "%PREFIX%\.crates.toml"
+cargo install --no-track --locked --root "%PREFIX%" --path . || exit 1
 
-goto :EOF
-
-:error
-echo Failed with error #%errorlevel%.
-exit 1
+cargo-bundle-licenses ^
+    --format yaml ^
+    --output "%SRC_DIR%\THIRDPARTY.yml" ^
+    || exit 1
