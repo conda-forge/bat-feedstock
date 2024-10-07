@@ -1,5 +1,4 @@
 {% set version = "0.24.0" %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: bat
@@ -10,16 +9,14 @@ source:
   sha256: 907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('rust') }}
-    - {{ compiler('c') }}              # [unix]
-    - {{ compiler('m2w64_c') }}        # [win]
-  host:
-    - clangdev              # [not osx]
-    - llvmdev               # [not osx]
+    - {{ compiler('c') }}
+    - {{ stdlib("c") }}
+    - cargo-bundle-licenses
 
 test:
   commands:
@@ -30,7 +27,9 @@ about:
   license: MIT
   license_family: MIT
   summary: A cat(1) clone with syntax highlighting and Git integration
-  license_file: LICENSE-MIT
+  license_file:
+    - LICENSE-MIT
+    - THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
