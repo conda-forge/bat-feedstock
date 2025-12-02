@@ -1,4 +1,4 @@
-{% set version = "0.26.0" %}
+{% set version = "0.26.1" %}
 
 package:
   name: bat
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/sharkdp/bat/archive/v{{ version }}.tar.gz
-  sha256: ccf3e2b9374792f88797a28ce82451faeae0136037cb8c8b56ba0a6c1a94fd69
+  sha256: 4474de87e084953eefc1120cf905a79f72bbbf85091e30cf37c9214eafcaa9c9
 
 build:
   number: 0
